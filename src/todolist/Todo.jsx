@@ -1,14 +1,13 @@
 const Todo = ({text, isComplated, isDeleted}) => {
     if(isDeleted) {
-        null
-    }
-    else if (isComplated) {
-        return (
-            <li><del>{text}</del></li>
-        )
+        return null
     }else {
         return (
-            <li>{text}</li>
+            <>
+                {/* tenary operator */}
+                {/* <li>{isComplated ? <del>{text}</del> : text}</li> */}
+                <li>{text} {isComplated && '✅'}</li>
+            </>
         )
     }
 
