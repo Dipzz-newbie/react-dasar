@@ -1,19 +1,21 @@
 const HelloWorld = () => {
+    const props = {
+        text: "Hello World"
+    }
     return (
         <>
-        <Header />
+        <Header {...props} />
         <Paragraph />
         </>
     )
 }
 
-const Header = () => {
-    const header = "Hello World"
+const Header = ({text = "Ups, Lupa Kasih teks"}) => {
     return (
         <h1 style={{
             color: "black",
             backgroundColor: "red"
-        }}>{header.toUpperCase()}</h1>
+        }}>{text.toUpperCase()}</h1>
     )
 }
 
