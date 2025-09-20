@@ -10,14 +10,21 @@ const HelloWorld = () => {
 const Header = () => {
     const header = "Hello World"
     return (
-        <h1>{header.toUpperCase()}</h1>
+        <h1 style={{
+            color: "black",
+            backgroundColor: "red"
+        }}>{header.toUpperCase()}</h1>
     )
 }
 
 const Paragraph = () => {
     const paragraph = "I am learning React"
+    const style = {
+        color: "white",
+        backgroundColor: "blue"
+    }
     return (
-        <p>{paragraph.toLowerCase()}</p>
+        <p style={style}>{paragraph.toLowerCase()}</p>
     )
 }
 
