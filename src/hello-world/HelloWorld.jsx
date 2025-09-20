@@ -1,3 +1,5 @@
+import "./helloworld.css"
+
 const HelloWorld = () => {
     const props = {
         text: "Hello World"
@@ -12,21 +14,14 @@ const HelloWorld = () => {
 
 const Header = ({text = "Ups, Lupa Kasih teks"}) => {
     return (
-        <h1 style={{
-            color: "black",
-            backgroundColor: "red"
-        }}>{text.toUpperCase()}</h1>
+        <h1 className="title">{text.toUpperCase()}</h1>
     )
 }
 
 const Paragraph = () => {
     const paragraph = "I am learning React"
-    const style = {
-        color: "white",
-        backgroundColor: "blue"
-    }
     return (
-        <p style={style}>{paragraph.toLowerCase()}</p>
+        <p className="paragraph">{paragraph.toLowerCase()}</p>
     )
 }
 
