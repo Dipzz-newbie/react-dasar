@@ -2,16 +2,37 @@ import Todo from "./Todo";
 
 const TodoList = () => {
     const data = [
-        {text: "Belajar React", isComplated: false},
-        {text: "Belajar JavaScript", isComplated: true},
-        {text: "Belajar HTML", isComplated: true},
-        {text: "Belajar CSS", isComplated: true},
-        {text: "Belajar Typescript", isComplated: false},
+        {   
+            id: 1,
+            text: "Belajar React", 
+            isComplated: false
+        },
+        {
+            id: 2,
+            text: "Belajar JavaScript", 
+            isComplated: true
+        },
+        {
+            id: 3,
+            text: "Belajar HTML", 
+            isComplated: true
+        },
+        {
+            id: 4,
+            text: "Belajar CSS", 
+            isComplated: true
+        },
+        {
+            id: 5,
+            text: "Belajar Typescript", 
+            isComplated: false
+        },
     ]
-    
-    const todos = data.map((todo) => {
-        return <Todo {...todo}/>
-    })
+
+    // Alternative render dengan map membuat data variabel 
+    // const todos = data.map((todo) => {
+    //     return <Todo key={todo.id} {...todo}/>
+    // })
 
     return (
         <>
@@ -21,7 +42,10 @@ const TodoList = () => {
             {/* <Todo text="Belajar HTML" isComplated={true}/> */}
             {/* <Todo text="Belajar CSS" isComplated={true}/> */}
             {/* <Todo text="Belajar Typescript" isComplated={false}/> */}
-            {todos}
+            {/* membuat data langsung di dalam react */}
+            {data.map((todo) => (
+                <Todo key={todo.id} {...todo}/>
+            ))}
 
             </ul>
         </>
