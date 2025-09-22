@@ -1,8 +1,8 @@
 // ref https://react.dev/learn/responding-to-events
 
-const AlertButton = ({text}) => {
+const AlertButton = ({text, massage}) => {
     const handleClick = () => {
-        alert("Button clicked!");
+        alert(massage);
     };
 
     return (

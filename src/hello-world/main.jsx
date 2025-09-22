@@ -5,6 +5,7 @@ import Container from "./Container.jsx"
 import TodoList from '../todolist/TodoList.jsx'
 import Table from '../table/Table.jsx'
 import AlertButton from '../button/AlertButton.jsx'
+import MyButton from '../button/MyButton.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -12,7 +13,10 @@ createRoot(document.getElementById('root')).render(
       <HelloWorld />
       <TodoList />
       <Table/>
-      <AlertButton text="click me"/>
+      <AlertButton text="Click Me!" massage="Hello World"/>
+      {/* // you can also pass the function directly without creating a function first */}
+      <MyButton text="Hit me" onSmash={() => {alert("you hit me")}}/>
+      <MyButton text="Smash me" onSmash={() => {alert("you smash me")}}/>
     </Container>
   </StrictMode>,
 )
