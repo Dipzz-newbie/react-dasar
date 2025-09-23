@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useImmer } from "use-immer"
 
 const contactForm = () => {
-    const [contact, setContact] = useState({
+    const [contact, setContact] = useImmer({
         nama: "",
         massage: ""
     })
 
     const handlerNameUser = (e) => {
-        setContact({...contact, nama: e.target.value})
+        setContact(contact => {
+            contact.nama = e.target.value
+        })
     }
 
     const handlerMassageUser = (e) => {
-        setContact({...contact, massage: e.target.value})
+        setContact(contact => {
+            contact.massage = e.target.value
+        })
     }
 
     return (
