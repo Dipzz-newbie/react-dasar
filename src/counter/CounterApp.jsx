@@ -15,9 +15,12 @@ const CounterApp = () => {
         {/* show2 && <Counter name="dipzz"/> */}     
 
         {/* akan mempertahankan state nya, tidak akan berubah value sebelum di ubah nama nya*/}
-        {show2 ?  <Counter name="dipzz"/> : <Counter name="Opponnent"/>}
+        {/* {show2 ?  <Counter name="dipzz"/> : <Counter name="Opponnent"/>} */}
 
-        {show2 ?  <Counter name="dipzz"/> : <p>hilang</p>}
+        {/* {show2 ?  <Counter name="dipzz"/> : <Counter name="Opponnent"/>} */}
+
+        {!show2 && <Counter name="2"/>}
+        {show2 && <Counter name="1"/>}
 
         <input type="checkbox" checked={show2} onChange={handleChange} /> tampilkan counter 2
         </>
