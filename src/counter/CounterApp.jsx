@@ -5,7 +5,7 @@ const CounterApp = () => {
     const [show2, isShow2] = useState(true)
 
     const handleChange = (e) => {
-        isShow2(e.target.value)
+        isShow2(e.target.checked)
     }
 
     return(
@@ -13,7 +13,7 @@ const CounterApp = () => {
         <Counter/>
         {show2 && <Counter/>}
 
-        <input type="checkbox" checked={show2} onChange={handleChange} />
+        <input type="checkbox" checked={show2} onChange={handleChange} /> tampilkan counter 2
         </>
     )
 }
