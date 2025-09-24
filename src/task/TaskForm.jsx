@@ -1,7 +1,9 @@
+    // it gonna be use in Task.jsx
+    
     import { useState } from "react"
 
 
-    const TaskForm = ({onSubmit}) => {
+    const TaskForm = ({setItems}) => {
         const [item, setItem] = useState("")
 
         const handleChange = (e) => {
@@ -9,7 +11,11 @@
         }
 
         const handleClick = () => {
-            onSubmit(item)
+            if (item.trim() !== "") {
+            setItems((draft) => {
+                draft.push(item);
+            });
+   }
             setItem("")
         }
 

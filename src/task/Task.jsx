@@ -6,17 +6,9 @@ import TaskList from "./TaskList";
 const Task = () => {
     const [items, setItems] = useImmer([])
 
-    const handleSubmit = (item) => {
-        if (item.trim() !== "") {
-            setItems((draft) => {
-                draft.push(item);
-            });
-        }
-    };
-
     return(
         <>
-            <TaskForm onSubmit={handleSubmit}/>
+            <TaskForm setItems={setItems}/>
             <TaskList items={items}/>
         </>
     )
