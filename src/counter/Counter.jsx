@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-const Counter = () => {
+const Counter = ({name}) => {
 
     const [count, setCount] = useState(0)
 
@@ -12,7 +12,7 @@ const Counter = () => {
     
     return(
         <>
-            <h1>Counter {count}</h1>
+            <h1>Counter {name} : {count}</h1>
             <button onClick={handleCounter}>Increment +1</button>
         </>
     )
