@@ -22,6 +22,9 @@ const CounterApp = () => {
         {!show2 && <Counter name="2"/>}
         {show2 && <Counter name="1"/>}
 
+
+        {show2 ? <Counter key="Dipzz" name="Dipzz"/> : <Counter key="eko" name="eko"/>}
+
         <input type="checkbox" checked={show2} onChange={handleChange} /> tampilkan counter 2
         </>
     )
