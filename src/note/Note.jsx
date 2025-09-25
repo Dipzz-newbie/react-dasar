@@ -33,7 +33,10 @@ const Note = ({note, onChange, onDelete}) => {
     return(
         <>
             <input type="checkbox" checked={note.done} onChange={handleCheckDone}/>
+            {component}
             <button onClick={() => onDelete(note)}>Delete</button>
         </> 
     )
 }
+
+export default Note;
