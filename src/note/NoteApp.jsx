@@ -1,5 +1,6 @@
 // import { useImmer } from "use-immer";
-import { useReducer } from "react";
+// import { useReducer } from "react";
+import { useImmerReducer } from "use-immer";
 import NoteForm from "./NoteForm";
 import NoteList from "./NoteList";
 
@@ -14,27 +15,20 @@ const initialCore = [
     {id: id++, text:"Belajar MySql", done:false},
 ]
 const notesReducer = (notes, action) => {
-        switch (action.type) {
-            case "ADD_Note": 
-            return [
-                ...notes,
-                {
-                    id: id++,
-                    text:action.text,
-                    done: false
-                }
-            ];
-            
-            case "CHANGE_Note" :
-                return notes.map(note => note.id === action.id ? {...note, text: action.text, done: action.done} : note );
-
-            case "DELETE_Note" :
-                return notes.filter(note => note.id !== action.id);
-
-            default:
-                notes;
-        }   
+    if(action.type === "ADD_Note") {
+        notes.push({
+            id: id++,
+            text: action.text,
+            done: false
+        })
+    } else if (action.type === "CHANGE_Note"){
+        const index = notes.findIndex(item => item.id === action.id)
+        notes[index] = {...action}
+    }else if (action.type === "DELETE_Note"){
+        const index = notes.findIndex(item => item.id === action.id)
+        notes.splice(index, 1)
     }
+}
 
 const NoteApp = () => {
 
@@ -67,7 +61,7 @@ const NoteApp = () => {
     }
     */
 
-    const [notes, dispatch] = useReducer(notesReducer, initialCore);
+    const [notes, dispatch] = useImmerReducer(notesReducer, initialCore);
 
     const handleAddNote = (text) => {
         dispatch({
