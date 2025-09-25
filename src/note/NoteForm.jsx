@@ -3,21 +3,21 @@ import { useState } from "react";
 
 const NoteForm = ({addValue}) => {
 
-    const [value , setValue] = useState("")
+    const [text , setText] = useState("")
 
     const handleChange = (e) => {
-        setValue(e.target.value)
+        setText(e.target.value)
     }
 
     const handleClick = () => {
         addValue(value)
-        setValue("")
+        setText("")
     }
 
 
     return(
         <>
-            <input type="text" onChange={handleChange} placeholder="Input text here!" />
+            <input type="text" onChange={handleChange} placeholder="Input text here!" value={text} />
             <button onClick={handleClick}>Add</button>
         </>
     )
