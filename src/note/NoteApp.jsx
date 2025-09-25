@@ -18,7 +18,7 @@ const NoteApp = () => {
 
     const [notes, setNotes] = useImmer(initialCore)
 
-    const handleAddNote = ({text}) => {
+    const handleAddNote = (text) => {
         setNotes(draft => {
             draft.push({
                 id:id++,
@@ -28,16 +28,16 @@ const NoteApp = () => {
         })
     }
 
-    const handleChangeNote = ({note}) => {
+    const handleChangeNote = (note) => {
         setNotes(draft => {
             const index = draft.findIndex(item => item.id === note.id)
             draft[index] = note;
         })
     }
 
-    const handleDeleteNote = ({note}) => {
+    const handleDeleteNote = (note) => {
         setNotes(draft => {
-            const index = draft.findIndex(item => item.id == note.id)
+            const index = draft.findIndex(item => item.id === note.id)
             draft.splice(index, 1)
         })
     }

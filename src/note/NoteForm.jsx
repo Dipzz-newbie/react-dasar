@@ -10,14 +10,14 @@ const NoteForm = ({addValue}) => {
     }
 
     const handleClick = () => {
-        addValue(value)
-        setText("")
-    }
-
+    if (text.trim() === "") return;
+    addValue(text);
+    setText("");
+    };
 
     return(
         <>
-            <input type="text" onChange={handleChange} placeholder="Input text here!" value={text} />
+            <input type="text" value={text} onChange={handleChange} placeholder="Input text here!" />
             <button onClick={handleClick}>Add</button>
         </>
     )
