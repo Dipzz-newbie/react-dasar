@@ -42,7 +42,22 @@ const NoteApp = () => {
         })
     }
 
-
+    const funcReducer = (notes, action) => {
+        switch (action.type) {
+            case "ADD_Note": 
+            return [
+                ...notes,
+                {
+                    id: id++,
+                    text:action.text,
+                    done: false
+                }
+            ]
+            
+            case "CHANGE_Note" :
+                return notes.map(note => note.id === action.id ? {...note, text: action.text, done: action.done} : note )
+        }
+    }
 
     return(
         <div>
