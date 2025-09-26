@@ -1,8 +1,8 @@
-const { useContext } = require("react");
+import { createContext } from "react";
 
 
-export const NotesContext = useContext(null);
-export const NotesDispatchContext = useContext(null)
+export const ValueContext = createContext(null);
+export const NotesDispatchContext = createContext(null)
 
 
 
