@@ -1,9 +1,3 @@
+import { createContext } from "react";
 
-
-const ProfileContext = () => {
-    return(
-        <></>
-    )
-}
-
-export default ProfileContext;
+export const profileContext = createContext("");
