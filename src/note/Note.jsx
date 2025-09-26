@@ -1,12 +1,17 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { NotesDispatchContext } from "./NotesContext";
 
 
-const Note = ({note, onChange, onDelete}) => {
+const Note = ({note}) => {
     const [isEditing, setIsEditing] = useState(false)
+    const dispatch = useContext(NotesDispatchContext)
     let component;
     const handleChangeText = (e) => {
-        const newNote = {...note, text:e.target.value}
-        onChange(newNote)
+        dispatch({
+            ...note,
+            type: "CHANGE_Note",
+            text: e.value.target
+        })
     }
 
     if(isEditing) {
@@ -26,15 +31,25 @@ const Note = ({note, onChange, onDelete}) => {
     }
 
     const handleCheckDone = (e) => {
-        const newNote = {...note, done:e.target.checked}
-        onChange(newNote)
+        dispatch({
+            ...note,
+            type: "CHANGE_Note",
+            done: e.target.checked
+        })
+    }
+
+    const handleDelete = () => {
+        dispatch({
+            type: "DELETE_Note",
+            id: note.id
+        })
     }
 
     return(
         <>
             <input type="checkbox" checked={note.done} onChange={handleCheckDone}/>
             {component}
-            <button onClick={() => onDelete(note)}>Delete</button>
+            <button onClick={handleDelete}>Delete</button>
         </> 
     )
 }
