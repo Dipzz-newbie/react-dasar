@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { profileContext } from "./ProfileContext";
+import { ProfileContext } from "./ProfileContext";
 
 
 const ProfileAddress = () => {
 
-    const profile = useContext(profileContext)
+    const profile = useContext(ProfileContext)
 
     return(
         <>
