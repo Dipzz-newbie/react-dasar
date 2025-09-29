@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import GuestBookForm from "./GuestBookForm";
+import GuestBookMassage from "./GuestBookMassage";
 
 
 const GuestBook = () => {
@@ -24,11 +25,7 @@ const GuestBook = () => {
             <h1>GuestBook</h1>
             <form>
                 <GuestBookForm ref={nameInput} name={name} setName={setName}/>
-
-                <label htmlFor="massage">Massage</label> <br/>
-                <textarea name="massage" value={massage} onChange={(e) => {
-                    setMassage(e.target.value)
-                }}>Massage</textarea> <br/>
+                <GuestBookMassage massage={massage} setMassage={setMassage}/>
                 <button onClick={handleSubmit}>Submit</button>
 
             </form>
