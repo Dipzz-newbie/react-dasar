@@ -1,10 +1,9 @@
 
 
-
 const GuestBook = () => {
     return(
         <>
-            <h1>Hello i'm from GuestBook!</h1>
+            <h1>hello i'm from GuestBook</h1>
         </>
     )
 }
