@@ -12,7 +12,7 @@ const Timer = () => {
         setStart(Date.now())
         setNow(Date.now())
 
-        timer.current(() => {
+        timer.current = setInterval(() => {
             setNow(new Date().getTime())
         }, 10)
     }
