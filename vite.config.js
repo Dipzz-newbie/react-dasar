@@ -14,7 +14,8 @@ export default defineConfig({
         counter: 'counter.html',
         note: 'note.html',
         context: 'context.html',
-        timer: "timer.html"
+        timer: "timer.html",
+        guestbook: "guestbook.html"
       }
     }
   }
