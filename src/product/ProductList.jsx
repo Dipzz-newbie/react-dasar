@@ -9,7 +9,11 @@ const ProductList = () => {
 
     useEffect(() => {
         if(loaded.current === false){
-            fetch("/product.json").then((response) => response.json()).then((data) => {setProducts(data)}).then(loaded.current(true))
+            fetch("/product.json").then((response) => response.json()).then((data) => {setProducts(data)}).then(loaded.current = true)
+        }
+
+        return () => {
+            console.log("Product List component unmounted")
         }
     })
 
