@@ -1,8 +1,11 @@
 
 
-const Product = () => {
+const Product = ({product}) => {
     return(
-        <>Hello!</>
+        <div>
+            <h1>{product.id} : {product.product}</h1>
+            <p>harga : {product.price}</p>
+        </div>
     )
 }
 
